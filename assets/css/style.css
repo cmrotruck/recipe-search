@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.hero-banner {
+  background-image: url("../images/hero2.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-wrap: wrap;
+  background-attachment: fixed;
+  background-position: 80%;
+  min-height: 45vh;
+}
+.hero-banner h2 {
+  font-size: 3vw;
+  margin: 0 25px 25px 0;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+.searchbutton {
+  margin: 20px;
+  text-align: center;
+}
+.input {
+  border: 2px solid black;
+}
+.ui.input > input {
+  border-radius: 0;
+}
+
+.random {
+  font-size: 2em !important;
+  margin: 10px !important;
+  vertical-align: sub;
+}
+.ui.card:first-child,
+.ui.card:last-child {
+  margin: 1em 0;
+}
+.recipes {
+  display: flex !important;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 20px;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: lightblue;
+  width: 100%;
+  padding: 40px 35px;
+}
+footer h2 {
+  color: var(--secondary-color);
+  font-size: 30px;
+  margin: 0;
+}
+footer h2,
+footer div {
+  text-align: center;
+  width: 100%;
+}
