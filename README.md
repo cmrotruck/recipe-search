@@ -17,6 +17,6 @@ nutritional information.
 https://cmrotruck.github.io/recipe-search
 
 ## Contributions
-Made with ❤️ by Chad Rotruck,Sandeep, Cheri Merryman
+Made with ❤️ by Chad Rotruck, Sandeep Vittala, Cheri Merryman
 
 ### ©️2021
