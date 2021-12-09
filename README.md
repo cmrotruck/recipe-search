@@ -14,9 +14,9 @@ nutritional information.
 *3rd party APIs
 
 ## Website
-https://cmrotruck.github.io/recipe-search
+https://cmrotruck.github.io/recipe-search/
 
 ## Contributions
-Made with ❤️ by Chad Rotruck,Sandeep, Cheri Merryman
+Made with ❤️ by Chad Rotruck, Sandeep, Cheri Merryman
 
 ### ©️2021
