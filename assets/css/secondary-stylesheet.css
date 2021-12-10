@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+  }
+  .recipe-pic {
+    display: flex;
+    background-color: lightblue;
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+    margin: 0;
+    padding: 0 5px 20px 5px;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+  }
+
+  .ingredients h2 {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .ingredients ul {
+    display: table;
+    margin: 0 auto 20px auto;
+    font-size: 20px;
+  }
+
+  .directions-link {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+  }
+
+  .nutrition-facts {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    margin: 0 auto 20px auto;
+  }
+  footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: lightblue;
+    width: 100%;
+    padding: 40px 35px;
+    position: fixed;
+    bottom: 0;
+  }
+
+  footer h2 {
+    color: var(--secondary-color);
+    font-size: 30px;
+    margin: 0;
+  }
+
+  footer h2,
+  footer div {
+    text-align: center;
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 575px) {
+    .recipe-pic img {
+      width: 70%;
+    }
+  }
