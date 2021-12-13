@@ -23,13 +23,107 @@
     <section class="ingredients">
         <h2>What You'll Need</h2>
         <ul>
-            <li>1 lb beef tips</li>
-            <li>1/2 cup diced carrots</li>
-            <li>1 cup cubbed potatoes</li>
-            <li>1/4 cup chopped celery</li>
-            <li>3 cups beef broth</li>
+            <!-- make sure each item in this list gets the foodId put into the id field -->
+            <li class = "ingredient">1 lb beef tips</li>
+            <li class = "ingredient">1/2 cup diced carrots</li>
+            <li class = "ingredient">1 cup cubbed potatoes</li>
+            <li class = "ingredient">1/4 cup chopped celery</li>
+            <li class = "ingredient">3 cups beef broth</li>
         </ul>
     </section>
+    <div class = "ui modal">
+        <div class="demo-result-label">
+            <div class="col-12">
+                <section class="nutritional-facts" id="nutritional-facts">
+                    <div class="nutritional-facts_header">
+                        <h1 class="nutritional-facts_title">Nutrition Facts</h1>
+                    </div>
+                    <table class="nutritional-facts_table">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="amps">Amount Per Serving</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th colspan="2" id="lkcal-val-cal"><b>Calories</b></th>
+                                 <td class="nob" id="calories">903</td>
+                            </tr>
+                            <tr class="border">
+                                <td colspan="3" class="small-info-daily-value"><b>% Daily Value*</b></td>
+                            </tr>
+                            <tr class="border">
+                                <th colspan="2" class="totalFatHeader"><b>Total Fat</b> 58.2 g</th>
+                                <td id="totalFat"><b>90 %</b></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="saturatedFatHeader">Saturated Fat 22.9 g</th>
+                                <td><b>114 %</b></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="transFatHeader">Trans Fat -</th>
+                                <td></td>
+                            </tr class="border">
+                            <tr class="border">
+                                <th colspan="2" class="cholesterolHeader"><b>Cholesterol</b> 294.8 mg</th>
+                                <td><b>98 %</b></td>
+                            </tr>
+                            <tr class="border">
+                                <th colspan="2" class="sodiumHeader"><b>Sodium</b> 263.1 mg</th>
+                                <td><b>11 %</b></td>
+                            </tr>
+                            <tr class="border">
+                                <th colspan="2" class="totalCarbHeader"><b>Total Carbohydrate</b> 0 g</th>
+                                <td><b>0 %</b></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="dietaryFiberHeader">Dietary Fiber 0 g</th>
+                                <td><b>0 %</b></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="totalSugarHeader">Total Sugars 0 g</th>
+                                <td></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="addedSugarsHeader">Includes - Added Sugars</th>
+                                <td></td>
+                            </tr>
+                            <tr class="border">
+                                <th colspan="2" class="proteinHeader"><b>Protein</b> 88.4 g</th>
+                                <td><b>177 %</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="nutritional-facts_table">
+                        <tbody>
+                            <tr class="border">
+                                <th class="vitaminDHeader">Vitamin D -</th>
+                                <td><b>-</b></td>
+                            </tr>
+                            <tr class="border">
+                                <th class="calciumHeader">Calcium 22.7 mg</th>
+                                <td><b>2 %</b></td>
+                            </tr>
+                            <tr class="border">
+                                <th class="ironHeader">Iron 9 mg</th>
+                                <td><b>50 %</b></td>
+                            </tr>
+                            <tr class="border">
+                                <th class="PotassiumHeader">Potassium 1478.7 mg</th>
+                                <td><b>31 %</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="small-info" id="small-nutrition-info">*Percent Daily Values are based on a 2000 calorie diet</p>
+                </section>
+            </div>
+        </div>
+    </div>
     <!-- Add Link to Directions-->
     <section>
         <div class="directions-link">
@@ -47,5 +141,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" ></script>
+  <script src="./assets/js/recipe.js"></script>
 </body>
 </html>

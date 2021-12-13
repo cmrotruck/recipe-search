@@ -10,6 +10,7 @@
     padding: 0;
     line-height: 1.5;
   }
+
   .recipe-pic {
     display: flex;
     background-color: lightblue;
@@ -78,6 +79,64 @@
   footer div {
     text-align: center;
     width: 100%;
+  }
+
+  .nutritional-facts{
+    font-size: 20px;
+  }
+
+  th{
+    text-align: left;
+  }
+
+  .nutrition-facts{
+    width: 100%;
+  }
+
+  .nutritional-facts_title{
+    background-color: white;
+    font-size: 35px;
+    border-bottom: 15px solid black;
+  }
+
+  .nutritional-facts_table{
+    text-align: right;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .border{
+    border-bottom: 1px solid black;
+  }
+
+  .blank-cell{
+    border: 0;
+    width: 2%
+  }
+
+  #lkcal-val-cal{
+    font-size: 35px;
+  }
+
+  #calories{
+    font-size: 30px;
+  }
+
+  .small-info-daily-value{
+    border-top: 5px solid black;    
+  }
+
+  .saturatedFatHeader, 
+  .dietaryFiberHeader, 
+  .transFatHeader, 
+  .totalSugarHeader, 
+  .addedSugarsHeader{
+    padding-left: 20px;
+  }
+
+  .nob{
+    text-align: right;
+    font-size: 14px;
   }
   
   @media screen and (max-width: 575px) {
