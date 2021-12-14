@@ -40,6 +40,7 @@ var getRecipeResult = function(searchword){
                         storedData = data.hits[i].recipe.uri.split("#")[1];
                         
                         var hrefString = "./recipe.html?id=" + storedData;
+                        console.log(hrefString);
                         $(recipeEl).attr('href',hrefString);
                     }   
                     
