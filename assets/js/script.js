@@ -1,6 +1,6 @@
 var searchBtn = document.getElementById("search-icon-id");
 var searchblock = document.getElementById("searchbuttoninner");
-
+var storedData = "";
 var searchInput = function (){
 
     var searchInputValue = document.querySelector("input[name='search-name']").value;
@@ -33,7 +33,12 @@ var getRecipeResult = function(searchword){
                         $(recipeEl).find(".header").text(recipeName);
                         $(recipeEl).find(".description").text(recipeType);
                         $(recipeEl).find(".image").attr("src", recipeImage);
-                    }
+                        storedData = data.hits[i].recipe.uri.split("#")[1];
+                        
+                        var hrefString = "./recipe.html?id=" + storedData;
+                        console.log(hrefString);
+                        $(recipeEl).attr('href',hrefString);
+                    }   
                     
                 });
                 console.log("Connection successful!");
