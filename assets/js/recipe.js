@@ -1,4 +1,13 @@
 var bodyEl = document.querySelector("body");
+
+var getRecipe = function() {
+    var recipeId = queryString.split("=")[1];
+    var apiURL = "https://api.edamam.com/api/recipes/v2/" + recipeId + "?type=public&app_id=579b2f0b&app_key=96bbae1d37867a6a42e036acb98ac063";
+    console.log(apiURL);
+}
+
+
+
 //nutritional api connection
 var loadNutritionalData = function (data, ingredient) {
     console.log(data);
@@ -68,3 +77,6 @@ $(".ingredients").on("click", function (event) {
     getNutritionalFacts(event.target.textContent);
     ;
 });
+
+//get recipe
+getRecipe();
