@@ -1,5 +1,10 @@
 var bodyEl = document.querySelector("body");
 
+var getRecipe = function(){
+    var recipeId = queryString.split("=")[1];
+    console.log(recipeId);
+};
+
 function round(amount) {
     return Number.parseFloat(amount).toPrecision(3);
 }
