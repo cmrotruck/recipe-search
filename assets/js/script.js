@@ -19,16 +19,21 @@ var getRecipeResult = function(searchword){
                 response.json()
                 .then(function(data) {
                     console.log(data);
-                      //Getting the recipe name
-                    let recipeName = data.hits[0].recipe.label;
-                    //Getting the recipe type
-                    let recipeType = data.hits[0].recipe.dishType[0];
-                    //Getting the image path 
-                    let recipeImage = data.hits[0].recipe.image;
-                    //adding the above values to the DOM
-                    $(".image").attr("src", recipeImage);
-                    $(".header").text(recipeName);
-                    $(".description").text(recipeType);
+                    for (i = 0; i < 6 ; i++){
+                        var recipeIdVal = "recipe" + i;
+                        var recipeEl = document.getElementById(recipeIdVal) ;
+                        console.log(recipeIdVal);
+                        //Getting the recipe name
+                        let recipeName = data.hits[i].recipe.label;
+                        //Getting the recipe type
+                        let recipeType = data.hits[i].recipe.dishType[0];
+                        //Getting the image path 
+                        let recipeImage = data.hits[i].recipe.image;
+                        //adding the above values to the DOM
+                        $(recipeEl).find(".header").text(recipeName);
+                        $(recipeEl).find(".description").text(recipeType);
+                        $(recipeEl).find(".image").attr("src", recipeImage);
+                    }
                     
                 });
                 console.log("Connection successful!");
