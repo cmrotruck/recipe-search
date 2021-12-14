@@ -11,6 +11,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+hide {
+  display: none !important;
+}
 
 .hero-banner {
   background-image: url("../images/hero2.jpg");

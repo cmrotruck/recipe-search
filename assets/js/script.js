@@ -22,7 +22,10 @@ var getRecipeResult = function(searchword){
                     for (i = 0; i < 6 ; i++){
                         var recipeIdVal = "recipe" + i;
                         var recipeEl = document.getElementById(recipeIdVal) ;
-                        console.log(recipeIdVal);
+                        var hideEl = document.getElementById("hideId");
+                        $(hideEl).removeClass("hide");
+                        $(hideEl).addClass("recipes");
+
                         //Getting the recipe name
                         let recipeName = data.hits[i].recipe.label;
                         //Getting the recipe type
@@ -33,10 +36,10 @@ var getRecipeResult = function(searchword){
                         $(recipeEl).find(".header").text(recipeName);
                         $(recipeEl).find(".description").text(recipeType);
                         $(recipeEl).find(".image").attr("src", recipeImage);
+
                         storedData = data.hits[i].recipe.uri.split("#")[1];
                         
                         var hrefString = "./recipe.html?id=" + storedData;
-                        console.log(hrefString);
                         $(recipeEl).attr('href',hrefString);
                     }   
                     
