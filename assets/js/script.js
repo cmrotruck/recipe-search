@@ -83,3 +83,11 @@ $(searchblock).on("keydown", (function (event){
     }
         
 }));
+
+$(".card").on("click",function(event){
+    //parse data
+
+    
+    console.log("clicked");
+    //storedData.uri.split("#")[1]
+})
