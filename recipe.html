@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap">
+    <link rel="stylesheet" href="./assets/css/secondary-stylesheet.css" />
+    <title>Recipe Page</title>
+</head>
+<body>
+    <!-- Food Pic and Recipe Name go here -->
+    <section> 
+        <div class="recipe-pic">
+            <img src="./assets/images/beef-vegetable-soup.jpg">
+        </div>
+        <h1>Hearty Beef Vegetable Soup</h1>
+    </section>
+
+    <!-- Ingredients List goes here -->
+    <section class="ingredients">
+        <h2>What You'll Need</h2>
+        <ul>
+            <!-- make sure each item in this list gets the foodId put into the id field -->
+            <li class = "ingredient">1 lb beef tips</li>
+            <li class = "ingredient">1/2 cup diced carrots</li>
+            <li class = "ingredient">1 cup cubbed potatoes</li>
+            <li class = "ingredient">1/4 cup chopped celery</li>
+            <li class = "ingredient">3 cups beef broth</li>
+        </ul>
+    </section>
+    <div class = "ui modal">
+        <div class="demo-result-label">
+            <div class="col-12">
+                <section class="nutritional-facts" id="nutritional-facts">
+                    <div class="nutritional-facts_header">
+                        <h1 class="nutritional-facts_title">Nutrition Facts</h1>
+                    </div>
+                    <table class="nutritional-facts_table">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="amps">Amount Per Serving</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th colspan="2" id="lkcal-val-cal"><b>Calories</b></th>
+                                 <td class="nob" id="calories"></td>
+                            </tr>
+                            <tr class="border">
+                                <td colspan="3" class="small-info-daily-value"><b>% Daily Value*</b></td>
+                            </tr>
+                            <tr class="border">
+                                <th colspan="2" class="totalFatHeader"><b>Total Fat</b> <span id="totalFatWeight"></span></th>
+                                <td id="totalFat"><b><span id="TotalFatPercentage"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="saturatedFatHeader">Saturated Fat <span id="saturatedFatWeight"></span></th>
+                                <td><b><span id="saturatedFatpercentage"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="transFatHeader">Trans Fat -</th>
+                                <td></td>
+                            </tr class="border">
+                            <tr class="border">
+                                <th colspan="2" class="cholesterolHeader"><b>Cholesterol</b> <span id="cholesterolWeight"></span></th>
+                                <td><b><span id="cholesterolPercentage"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <th colspan="2" class="sodiumHeader"><b>Sodium</b> <span id="sodiumWeight"></span></th>
+                                <td><b><span id="sodiumPercentage"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <th colspan="2" class="totalCarbHeader"><b>Total Carbohydrate </b><span id="totalCarbWeight"></span></th>
+                                <td><b><span id="totalCarbPercentage"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="dietaryFiberHeader">Dietary Fiber <span id="dietaryFiberWeight"></span></th>
+                                <td><b><span id="dietaryFiberPercentage"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="totalSugarHeader">Total Sugars <span id="totalSugarsWeight"></span></th>
+                                <td><span id="totalSugarsPercentage"></span></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="addedSugarsHeader">Includes - Added Sugars</th>
+                                <td></td>
+                            </tr>
+                            <tr class="border">
+                                <th colspan="2" class="proteinHeader"><b>Protein</b> <span id="proteinWeight"></span></th>
+                                <td><b><span id="proteinPercentage"></span></b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="nutritional-facts_table">
+                        <tbody>
+                            <tr class="border">
+                                <th class="vitaminDHeader">Vitamin D <span id="vitaminDWeight"></span></th>
+                                <td><b><span id="vitaminDPercentage"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <th class="calciumHeader">Calcium <span id="calciumWeight"></span></th>
+                                <td><b><span id="calciumPercentage"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <th class="ironHeader">Iron <span id="ironWeight"></span></th>
+                                <td><b><span id="ironPercentage"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <th class="PotassiumHeader">Potassium <span id="potassiumWeight"></span></th>
+                                <td><b><span id="potassiumPercentage"></span></b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="small-info" id="small-nutrition-info">*Percent Daily Values are based on a 2000 calorie diet</p>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- Add Link to Directions-->
+    <section>
+        <div class="directions-link">
+            <a href="https://www.allrecipes.com/recipe/281995/classic-hearty-beef-stew/"><button>Get the Full Recipe</button></a>
+        </div>
+        <div class="nutrition-facts">
+            <p>Click <strong>HERE</strong> for Nutrition Facts.</p>
+        </div>
+    </section>
+    <footer>
+        <h2>❤️ Made with love by Chad, Cheri & Sandeep</h2>
+    </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" ></script>
+  <script src="./assets/js/recipe.js"></script>
+</body>
+</html>
