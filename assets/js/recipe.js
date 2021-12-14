@@ -97,3 +97,5 @@ $(".ingredients").on("click", function (event) {
     getNutritionalFacts(event.target.textContent);
     ;
 });
+
+getRecipe();
