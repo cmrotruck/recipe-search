@@ -52,6 +52,9 @@ body {
 .ui.card:last-child {
   margin: 1em 0;
 }
+.description {
+  font-style: italic;
+}
 .recipes {
   display: flex !important;
   flex-flow: row wrap;
