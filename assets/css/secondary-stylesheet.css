@@ -16,7 +16,7 @@
     background-color: lightblue;
     padding: 20px;
     margin: 0;
-    width: 100%;
+    text-align: center;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
@@ -40,10 +40,11 @@
   }
 
   .ingredients ul {
-    display: tablelist;
+    display: table;
     margin: 0 auto 20px auto;
     font-size: 20px;
     padding: 20px;
+    
   }
 
   .directions-link {
