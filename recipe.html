@@ -13,8 +13,8 @@
 <body>
     <!-- Food Pic and Recipe Name go here -->
     <section> 
-        <a class="recipe-pic">
-            <img class="foodPic" >
+        <a>
+            <img id="foodPic" >
         </a>
 
         <h1 id="title"></h1>
@@ -23,13 +23,8 @@
     <!-- Ingredients List goes here -->
     <section class="ingredients">
         <h2>What You'll Need</h2>
-        <ul>
+        <ul id="ingredient">
             <!-- make sure each item in this list gets the foodId put into the id field -->
-            <li class = "ingredient">1 lb beef tips</li>
-            <li class = "ingredient">1/2 cup diced carrots</li>
-            <li class = "ingredient">1 cup cubbed potatoes</li>
-            <li class = "ingredient">1/4 cup chopped celery</li>
-            <li class = "ingredient">3 cups beef broth</li>
         </ul>
     </section>
     <div class = "ui modal">
@@ -128,7 +123,7 @@
     <!-- Add Link to Directions-->
     <section>
         <div class="directions-link">
-            <a href="https://www.allrecipes.com/recipe/281995/classic-hearty-beef-stew/"><button>Get the Full Recipe</button></a>
+            <a href id="link"><button>Get the Full Recipe</button></a>
         </div>
         <div class="nutrition-facts">
             <p>Click <strong>HERE</strong> for Nutrition Facts.</p>

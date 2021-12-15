@@ -13,11 +13,25 @@ var bodyEl = document.querySelector("body");
                 response.json()
                     .then(function (data) {
                         //ALL WORK GOES HERE
-                        //var foodPic = data.recipe.images.REGULAR.url
-                        //$("#foodPic").image(foodPic);
+                        var foodPic = data.recipe.images.REGULAR.url;
+                        $("#foodPic").attr("src", foodPic);
+                        console.log(foodPic);
+
                         var recipeName = data.recipe.label;
                         $("#title").text(recipeName);
-                       console.log(recipeName);
+                       console.log(data);
+
+                       var recipeLink = data.recipe.shareAs;
+                       $("#link").attr("href",recipeLink);
+                       console.log(recipeLink);
+
+                       var ingredients = data.recipe.ingredientLines;
+                       var length = ingredients.length;
+                       for (var i = 0; i < length; i++) {
+                         var ingredient = ingredients[i]
+                         var li = $("<li></li>").text(ingredient);
+                         $("#ingredient").append(li)
+                       }
                     });
                 console.log("Connection successful!");
             }
