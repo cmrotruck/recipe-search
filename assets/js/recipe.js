@@ -1,9 +1,48 @@
 var bodyEl = document.querySelector("body");
 
-var getRecipe = function(){
-    var recipeId = queryString.split("=")[1];
-    console.log(recipeId);
-};
+ var getRecipe = function() {
+     var queryString = document.location.search;
+     var recipeId = queryString.split("=")[1];
+     var apiURL = "https://api.edamam.com/api/recipes/v2/" + recipeId + "?type=public&app_id=579b2f0b&app_key=96bbae1d37867a6a42e036acb98ac063";
+
+    
+    //nutritional api connection
+    fetch(apiURL)
+        .then(function (response) {
+            if (response.ok) {
+                response.json()
+                    .then(function (data) {
+                        //ALL WORK GOES HERE
+                        var foodPic = data.recipe.images.REGULAR.url;
+                        $("#foodPic").attr("src", foodPic);
+                        console.log(foodPic);
+
+                        var recipeName = data.recipe.label;
+                        $("#title").text(recipeName);
+                       console.log(data);
+
+                       var recipeLink = data.recipe.shareAs;
+                       $("#link").attr("href",recipeLink);
+                       console.log(recipeLink);
+
+                       var ingredients = data.recipe.ingredientLines;
+                       var length = ingredients.length;
+                       for (var i = 0; i < length; i++) {
+                         var ingredient = ingredients[i]
+                         var li = $("<li></li>").text(ingredient);
+                         $("#ingredient").append(li)
+                       }
+                    });
+                console.log("Connection successful!");
+            }
+            else {
+                console.log("conneciton unsuccessful");
+            }
+        })
+        .catch(function (error) {
+            console.log("could not connect");
+        })
+ }
 
 function round(amount) {
     return Number.parseFloat(amount).toPrecision(3);
@@ -98,4 +137,5 @@ $(".ingredients").on("click", function (event) {
     ;
 });
 
+//get recipe
 getRecipe();

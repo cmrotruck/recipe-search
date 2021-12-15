@@ -40,9 +40,10 @@
   }
 
   .ingredients ul {
-    display: table;
+    display: tablelist;
     margin: 0 auto 20px auto;
     font-size: 20px;
+    padding: 20px;
   }
 
   .directions-link {
