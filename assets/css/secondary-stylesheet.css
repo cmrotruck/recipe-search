@@ -13,7 +13,6 @@
 
   .recipe-pic {
     display: flex;
-    background-color: lightblue;
     padding: 20px;
     margin: 0;
     text-align: center;
@@ -25,12 +24,12 @@
   h1 {
     display: flex;
     justify-content: center;
-    background-color: lightblue;
     margin: 0;
     padding: 0 5px 20px 5px;
     flex-wrap: wrap;
-    width: 100%;
+    width: auto;
     text-align: center;
+    border-bottom: 5px solid lightblue;
   }
 
   .ingredients h2 {
@@ -39,15 +38,17 @@
     margin: 20px;
   }
 
-  .ingredients ul {
-    display: table;
-    margin: 0 auto 20px auto;
+  ul {
     font-size: 20px;
     padding: 20px;
-    
+    display: table; 
+    margin: 0 auto;
+    text-align: left;
+    width: 350px;
+    flex-wrap: wrap;
   }
 
-  .directions-link {
+  .directions-link { 
     display: flex;
     justify-content: center;
     margin: 0 auto 20px auto;
@@ -58,6 +59,8 @@
     justify-content: center;
     font-size: 16px;
     margin: 0 auto 20px auto;
+    flex-wrap: wrap;
+    text-align: center;
   }
 
   footer {
@@ -67,8 +70,7 @@
     background: lightblue;
     width: 100%;
     padding: 40px 35px;
-    position: fixed;
-    bottom: 0;
+    margin-bottom: 0px;
   }
 
   footer h2 {
