@@ -58,6 +58,9 @@ var getRecipeResult = function(searchword){
                             $("#inputbox").attr("placeholder", "Type an Ingredient");
                         }
                         
+                        var hrefString = "./recipe.html?id=" + storedData;
+                        console.log(hrefString);
+                        $(recipeEl).attr('href',hrefString);
                     }   
                     
                 });
