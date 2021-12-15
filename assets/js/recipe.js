@@ -13,7 +13,11 @@ var bodyEl = document.querySelector("body");
                 response.json()
                     .then(function (data) {
                         //ALL WORK GOES HERE
-                       console.log(data);
+                        //var foodPic = data.recipe.images.REGULAR.url
+                        //$("#foodPic").image(foodPic);
+                        var recipeName = data.recipe.label;
+                        $("#title").text(recipeName);
+                       console.log(recipeName);
                     });
                 console.log("Connection successful!");
             }
