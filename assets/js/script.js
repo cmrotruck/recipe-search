@@ -1,5 +1,7 @@
 var searchBtn = document.getElementById("search-icon-id");
 var searchblock = document.getElementById("searchbuttoninner");
+var previousResultBtn = document.getElementById("previousSearchId");
+var searchResults ;
 var storedData = "";
 var searchInput = function (){
 
@@ -19,28 +21,43 @@ var getRecipeResult = function(searchword){
                 response.json()
                 .then(function(data) {
                     console.log(data);
-                    for (i = 0; i < 6 ; i++){
+                    for (i = 0; i < 6 ; i++) {
                         var recipeIdVal = "recipe" + i;
                         var recipeEl = document.getElementById(recipeIdVal) ;
                         var hideEl = document.getElementById("hideId");
-                        $(hideEl).removeClass("hide");
-                        $(hideEl).addClass("recipes");
 
-                        //Getting the recipe name
-                        let recipeName = data.hits[i].recipe.label;
-                        //Getting the recipe type
-                        let recipeType = data.hits[i].recipe.dishType[0];
-                        //Getting the image path 
-                        let recipeImage = data.hits[i].recipe.image;
-                        //adding the above values to the DOM
-                        $(recipeEl).find(".header").text(recipeName);
-                        $(recipeEl).find(".description").text(recipeType);
-                        $(recipeEl).find(".image").attr("src", recipeImage);
+                        if (searchword !== ""){
+                            $(hideEl).removeClass("hide");
+                            $(hideEl).addClass("recipes");
+                            $(searchblock).removeClass("error");
+                            $("#inputbox").attr("placeholder", "Search...");
+                            $(previousResultBtn).removeClass("hide");
+                            $(previousResultBtn).text("Show Previous Ingredient");
+                            //Getting the recipe name
+                            let recipeName = data.hits[i].recipe.label;
+                            //Getting the recipe type
+                            let recipeType = data.hits[i].recipe.dishType[0];
+                            //Getting the image path 
+                            let recipeImage = data.hits[i].recipe.image;
+                            //adding the above values to the DOM
+                            $(recipeEl).find(".header").text(recipeName);
+                            $(recipeEl).find(".description").text(recipeType);
+                            $(recipeEl).find(".image").attr("src", recipeImage);
 
-                        storedData = data.hits[i].recipe.uri.split("#")[1];
+                            storedData = data.hits[i].recipe.uri.split("#")[1];
+                            
+                            var hrefString = "./recipe.html?id=" + storedData;
+                            $(recipeEl).attr('href',hrefString);
+                            localStorage.setItem('searchword',searchword);
+                            searchResults = localStorage.getItem('searchword');
+                            //console.log(searchResults);
                         
-                        var hrefString = "./recipe.html?id=" + storedData;
-                        $(recipeEl).attr('href',hrefString);
+
+                        } else {
+                            $(searchblock).addClass("error");
+                            $("#inputbox").attr("placeholder", "Type an Ingredient");
+                        }
+                        
                     }   
                     
                 });
@@ -92,10 +109,9 @@ $(searchblock).on("keydown", (function (event){
         
 }));
 
-$(".card").on("click",function(event){
-    //parse data
-
-    
-    console.log("clicked");
-    //storedData.uri.split("#")[1]
-})
+$(previousResultBtn).on("click", function (event) {
+    event.preventDefault();
+   
+   $(previousResultBtn).text(searchResults);
+   
+});
