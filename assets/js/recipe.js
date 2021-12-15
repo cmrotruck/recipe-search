@@ -29,7 +29,7 @@ var bodyEl = document.querySelector("body");
                        var length = ingredients.length;
                        for (var i = 0; i < length; i++) {
                          var ingredient = ingredients[i]
-                         var li = $("<li></li>").text(ingredient);
+                         var li = $("<li></li>").text(ingredient); 
                          $("#ingredient").append(li)
                        }
                     });

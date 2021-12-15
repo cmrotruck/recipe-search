@@ -48,7 +48,7 @@
     flex-wrap: wrap;
   }
 
-  .directions-link {
+  .directions-link { 
     display: flex;
     justify-content: center;
     margin: 0 auto 20px auto;
