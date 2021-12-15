@@ -1,11 +1,11 @@
 var bodyEl = document.querySelector("body");
 
- var getRecipe = function() {
-     var queryString = document.location.search;
-     var recipeId = queryString.split("=")[1];
-     var apiURL = "https://api.edamam.com/api/recipes/v2/" + recipeId + "?type=public&app_id=579b2f0b&app_key=96bbae1d37867a6a42e036acb98ac063";
+var getRecipe = function () {
+    var queryString = document.location.search;
+    var recipeId = queryString.split("=")[1];
+    var apiURL = "https://api.edamam.com/api/recipes/v2/" + recipeId + "?type=public&app_id=579b2f0b&app_key=96bbae1d37867a6a42e036acb98ac063";
 
-    
+
     //nutritional api connection
     fetch(apiURL)
         .then(function (response) {
@@ -15,23 +15,24 @@ var bodyEl = document.querySelector("body");
                         //ALL WORK GOES HERE
                         var foodPic = data.recipe.images.REGULAR.url;
                         $("#foodPic").attr("src", foodPic);
+                        // $("#foodPic").addClass("recipe-pic");
                         console.log(foodPic);
 
                         var recipeName = data.recipe.label;
                         $("#title").text(recipeName);
-                       console.log(data);
+                        console.log(data);
 
-                       var recipeLink = data.recipe.shareAs;
-                       $("#link").attr("href",recipeLink);
-                       console.log(recipeLink);
+                        var recipeLink = data.recipe.url;
+                        $("#link").attr("href", recipeLink);
+                        console.log(recipeLink);
 
-                       var ingredients = data.recipe.ingredientLines;
-                       var length = ingredients.length;
-                       for (var i = 0; i < length; i++) {
-                         var ingredient = ingredients[i]
-                         var li = $("<li></li>").text(ingredient); 
-                         $("#ingredient").append(li)
-                       }
+                        var ingredients = data.recipe.ingredientLines;
+                        var length = ingredients.length;
+                        for (var i = 0; i < length; i++) {
+                            var ingredient = ingredients[i]
+                            var li = $("<li>").text(ingredient);
+                            $("#ingredient").append(li)
+                        }
                     });
                 console.log("Connection successful!");
             }
@@ -42,7 +43,7 @@ var bodyEl = document.querySelector("body");
         .catch(function (error) {
             console.log("could not connect");
         })
- }
+}
 
 function round(amount) {
     return Number.parseFloat(amount).toPrecision(3);
@@ -55,7 +56,7 @@ var loadNutritionalData = function (data, ingredient) {
     //initialize modal
     $('.ui.modal')
         .modal()
-    ;
+        ;
 
     //fill out modal
 
@@ -103,7 +104,7 @@ var loadNutritionalData = function (data, ingredient) {
     //show modal
     $('.ui.modal')
         .modal('show')
-    ;
+        ;
 }
 
 var getNutritionalFacts = function (ingredient) {
@@ -115,7 +116,7 @@ var getNutritionalFacts = function (ingredient) {
             if (response.ok) {
                 response.json()
                     .then(function (data) {
-                        loadNutritionalData(data,ingredient);
+                        loadNutritionalData(data, ingredient);
                     });
                 console.log("Connection successful!");
             }
