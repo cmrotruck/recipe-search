@@ -12,24 +12,27 @@
   }
 
   .recipe-pic {
-    display: flex;
-    padding: 20px;
-    margin: 0;
-    text-align: center;
-    justify-content: center;
-    flex-wrap: wrap;
     width: 100%;
+    object-fit: cover;
+  
+    
   }
+  .image {
+    width: 100%;
+    height: 425px;
+    overflow: hidden;
+  }
+ 
 
   h1 {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0 5px 20px 5px;
-    flex-wrap: wrap;
-    width: auto;
-    text-align: center;
-    border-bottom: 5px solid lightblue;
+    font-size: 3vw;
+    margin: 0 25px 25px 0;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    top: 8px;
+    left: 16px;
   }
 
   .ingredients h2 {
