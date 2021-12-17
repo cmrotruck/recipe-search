@@ -13,11 +13,14 @@
 <body>
     <!-- Food Pic and Recipe Name go here -->
     <section> 
-        <a class="recipe-pic">
-            <img id="foodPic" >
-        </a>
+        
+        <div class="image">
+            <a>
+                 <img class="recipe-pic" id="foodPic" >
+             </a>
+         </div>
 
-        <h1 id="title"></h1>
+        <h1 class="recipe-name" id="title"></h1>
     </section>
 
     <!-- Ingredients List goes here -->
@@ -27,6 +30,7 @@
             <!-- make sure each item in this list gets the foodId put into the id field -->
         </ul>
     </section>
+
     <div class = "ui modal">
         <div class="demo-result-label">
             <div class="col-12">
@@ -126,7 +130,11 @@
             <a href id="link"><button>Get the Full Recipe</button></a>
         </div>
         <div class="nutrition-facts">
-            <p>Click <strong>HERE</strong> for recipe Nutrition Facts or click on each ingredient for specific nutritional facts.</p>
+            <p>Click <strong>HERE</strong> for recipe Nutrition Facts.</p>
+        </div>
+        
+        <div class="nutrition-facts">
+            <p>(Click any ingredient to get nutrition facts for individual ingredients.)</p>
         </div>
     </section>
     <footer>
@@ -139,4 +147,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" ></script>
   <script src="./assets/js/recipe.js"></script>
 </body>
-</html>
+</html> 
