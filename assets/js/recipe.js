@@ -32,8 +32,83 @@ var getRecipe = function () {
                             var ingredient = ingredients[i]
                             var li = $("<li>").text(ingredient);
                             $("#ingredient").append(li)
-                        }
-                    });
+}});
+                console.log("Connection successful!");
+            }
+            else {
+                console.log("conneciton unsuccessful");
+            }
+        })
+        .catch(function (error) {
+            console.log("could not connect");
+        })
+}
+
+var getFullNutritionFacts = function () {
+    var queryString = document.location.search;
+    var recipeId = queryString.split("=")[1];
+    var apiURL = "https://api.edamam.com/api/recipes/v2/" + recipeId + "?type=public&app_id=579b2f0b&app_key=96bbae1d37867a6a42e036acb98ac063";
+
+
+    //nutritional api connection
+    fetch(apiURL)
+        .then(function (response) {
+            if (response.ok) {
+                response.json()
+                    .then(function (data) {
+
+                            //initialize modal
+                            $('.ui.modal')
+                            .modal()
+                            ;
+
+                            $("#calories").text(Math.round(data.recipe.calories / data.recipe.yield));
+                            console.log(data.recipe);
+                             //total fat
+                            $("#totalFatWeight").text(Math.round(data.recipe.totalNutrients.FAT.quantity / data.recipe.yield) + " " + data.recipe.totalNutrients.FAT.unit);
+                            $("#TotalFatPercentage").text(Math.round(data.recipe.totalDaily.FAT.quantity / data.recipe.yield) + " " + data.recipe.totalDaily.FAT.unit);
+                            //saturated fat
+                            $("#saturatedFatWeight").text(Math.round(data.recipe.totalNutrients.FASAT.quantity / data.recipe.yield) + " " + data.recipe.totalNutrients.FASAT.unit);
+                            $("#saturatedFatpercentage").text(Math.round(data.recipe.totalDaily.FASAT.quantity / data.recipe.yield) + " " + data.recipe.totalDaily.FASAT.unit);
+                            //trans fat - no field in response
+                            //cholesterol
+                            $("#cholesterolWeight").text(Math.round(data.recipe.totalNutrients.CHOLE.quantity / data.recipe.yield) + " " + data.recipe.totalNutrients.CHOLE.unit);
+                            $("#cholesterolPercentage").text(Math.round(data.recipe.totalDaily.CHOLE.quantity / data.recipe.yield) + " " + data.recipe.totalDaily.CHOLE.unit);
+                            //sodium
+                            $("#sodiumWeight").text(Math.round(data.recipe.totalNutrients.NA.quantity / data.recipe.yield) + " " + data.recipe.totalNutrients.NA.unit);
+                            $("#sodiumPercentage").text(Math.round(data.recipe.totalDaily.NA.quantity / data.recipe.yield) + " " + data.recipe.totalDaily.NA.unit);
+                            //totalCarbs
+                            $("#totalCarbWeight").text(Math.round(data.recipe.totalNutrients.CHOCDF.quantity / data.recipe.yield) + " " + data.recipe.totalNutrients.CHOCDF.unit);
+                            $("#totalCarbPercentage").text(Math.round(data.recipe.totalDaily.CHOCDF.quantity / data.recipe.yield) + " " + data.recipe.totalDaily.CHOCDF.unit);
+                            //dietary fiber
+                            $("#dietaryFiberWeight").text(Math.round(data.recipe.totalNutrients.FIBTG.quantity / data.recipe.yield) + " " + data.recipe.totalNutrients.FIBTG.unit);
+                            $("#dietaryFiberPercentage").text(Math.round(data.recipe.totalDaily.FIBTG.quantity / data.recipe.yield) + " " + data.recipe.totalDaily.FIBTG.unit);
+                            //total sugars
+                            $("#totalSugarsWeight").text(Math.round(data.recipe.totalNutrients.SUGAR.quantity / data.recipe.yield) + " " + data.recipe.totalNutrients.SUGAR.unit);
+                            // $("#totalSugarsPercentage").text(data.totalDaily.SUGAR.quantity + " " + data.totalDaily.SUGAR.unit);
+                            //protein
+                            $("#proteinWeight").text(Math.round(data.recipe.totalNutrients.PROCNT.quantity / data.recipe.yield) + " " + data.recipe.totalNutrients.PROCNT.unit);
+                            $("#proteinPercentage").text(Math.round(data.recipe.totalDaily.PROCNT.quantity / data.recipe.yield) + " " + data.recipe.totalDaily.PROCNT.unit);
+                            //vitamin D
+                            // $("#vitaminDWeight").text(data.totalNutrients.VITD.quantity + " " + data.totalNutrients.VITD.unit);
+                            // $("#vitaminDPercentage").text(data.totalDaily.VITD.quantity + " " + data.totalDaily.VITD.unit);
+                            //calcium
+                            $("#calciumWeight").text(Math.round(data.recipe.totalNutrients.CA.quantity / data.recipe.yield) + " " + data.recipe.totalNutrients.CA.unit);
+                            $("#calciumPercentage").text(Math.round(data.recipe.totalDaily.CA.quantity / data.recipe.yield) + " " + data.recipe.totalDaily.CA.unit);
+                            //iron
+                            $("#ironWeight").text(Math.round(data.recipe.totalNutrients.FE.quantity / data.recipe.yield) + " " + data.recipe.totalNutrients.FE.unit);
+                            $("#ironPercentage").text(Math.round(data.recipe.totalDaily.FE.quantity / data.recipe.yield) + " " + data.recipe.totalDaily.FE.unit);
+                            //potassium
+                            $("#potassiumWeight").text(Math.round(data.recipe.totalNutrients.K.quantity / data.recipe.yield) + " " + data.recipe.totalNutrients.K.unit);
+                            $("#potassiumPercentage").text(Math.round(data.recipe.totalDaily.K.quantity / data.recipe.yield) + " " + data.recipe.totalDaily.K.unit);
+
+
+
+                            //show modal
+                            $('.ui.modal')
+                             .modal('show')
+                            ;
+});
                 console.log("Connection successful!");
             }
             else {
@@ -56,7 +131,7 @@ var loadNutritionalData = function (data, ingredient) {
     //initialize modal
     $('.ui.modal')
         .modal()
-        ;
+    ;
 
     //fill out modal
 
@@ -101,6 +176,8 @@ var loadNutritionalData = function (data, ingredient) {
     $("#potassiumWeight").text(Math.round(data.totalNutrients.K.quantity) + " " + data.totalNutrients.K.unit);
     $("#potassiumPercentage").text(Math.round(data.totalDaily.K.quantity) + " " + data.totalDaily.K.unit);
 
+
+
     //show modal
     $('.ui.modal')
         .modal('show')
@@ -137,6 +214,15 @@ $(".ingredients").on("click", function (event) {
     getNutritionalFacts(event.target.textContent);
     ;
 });
+
+$(".full-nutrition-facts").on("click", function (event) {
+    event.preventDefault();
+    // console.log(event.target.id);
+    // console.log(event.target.textContent);
+    getFullNutritionFacts(event.target.textContent);
+    ;
+});
+
 
 //get recipe
 getRecipe();

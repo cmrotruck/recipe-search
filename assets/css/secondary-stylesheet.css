@@ -10,26 +10,39 @@
     padding: 0;
     line-height: 1.5;
   }
-
-  .recipe-pic {
+  .hero-banner {
+    background-image: url("../images/hero2.jpg");
+    background-size: cover;
+    background-position: center;
     display: flex;
-    padding: 20px;
-    margin: 0;
-    text-align: center;
-    justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
+    background-attachment: fixed;
+    background-position: 80%;
+    min-height: 45vh;
   }
 
-  h1 {
+  .hero-banner h2 {
+    font-size: 3vw;
+    margin: 0 25px 25px 0;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .recipe-pic {
     display: flex;
     justify-content: center;
-    margin: 0;
-    padding: 0 5px 20px 5px;
-    flex-wrap: wrap;
-    width: auto;
-    text-align: center;
-    border-bottom: 5px solid lightblue;
+    margin: 20px auto 20px auto;
+  }
+ 
+
+  h1 {
+    font-size: 3vw;
+    margin: 0 25px 25px 0;
+    color: black;
+    padding: 10px;
+    justify-content: center;
+    margin: 20px auto 20px auto;
+    display: flex;
   }
 
   .ingredients h2 {
@@ -97,8 +110,14 @@
     width: 100%;
   }
 
+  .full-nutrition-facts{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
   .nutritional-facts_title{
-    background-color: white;
+    background-color: rgb(139, 138, 138);
     font-size: 35px;
     border-bottom: 15px solid black;
   }
@@ -107,6 +126,13 @@
     text-align: right;
     width: 100%;
     border-collapse: collapse;
+  }
+
+  .nutritional-facts_tableF {
+    text-align: right;
+    width: 100%;
+    border-collapse: collapse;
+    display: none;
   }
 
   .border{
@@ -143,6 +169,18 @@
     font-size: 14px;
   }
   
+  #lkcal-val-calF{
+    font-size: 35px;
+  }
+
+  #caloriesF{
+    font-size: 30px;
+  }
+
+  .nutritional-factsF{
+    font-size: 20px;
+  }
+
   @media screen and (max-width: 575px) {
     .recipe-pic img {
       width: 70%;
