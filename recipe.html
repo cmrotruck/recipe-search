@@ -11,6 +11,10 @@
     <title>Recipe Page</title>
 </head>
 <body>
+    <!-- hero -->
+    <section class="hero-banner">  
+        <h2>Recipe Search App! </h2>
+    </section>
     <!-- Food Pic and Recipe Name go here -->
     <section> 
         
@@ -125,17 +129,111 @@
         </div>
     </div>
     <!-- Add Link to Directions-->
+    <div class = "ui modalF">
+        <div class="demo-result-label">
+            <div class="col-12">
+                <section class="nutritional-facts" id="nutritional-factsF">
+                    <div class="nutritional-facts_header">
+                        <h1 class="nutritional-facts_title">Nutrition Facts</h1>
+                    </div>
+                    <table class="nutritional-facts_table">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="amps">Amount Per Serving</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th colspan="2" id="lkcal-val-calF"><b>Calories</b></th>
+                                 <td class="nob" id="caloriesF"></td>
+                            </tr>
+                            <tr class="border">
+                                <td colspan="3" class="small-info-daily-value"><b>% Daily Value*</b></td>
+                            </tr>
+                            <tr class="border">
+                                <th colspan="2" class="totalFatHeader"><b>Total Fat</b> <span id="totalFatWeightF"></span></th>
+                                <td id="totalFatF"><b><span id="TotalFatPercentageF"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="saturatedFatHeader">Saturated Fat <span id="saturatedFatWeightF"></span></th>
+                                <td><b><span id="saturatedFatpercentageF"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="transFatHeader">Trans Fat -</th>
+                                <td></td>
+                            </tr class="border">
+                            <tr class="border">
+                                <th colspan="2" class="cholesterolHeader"><b>Cholesterol</b> <span id="cholesterolWeightF"></span></th>
+                                <td><b><span id="cholesterolPercentageF"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <th colspan="2" class="sodiumHeader"><b>Sodium</b> <span id="sodiumWeightF"></span></th>
+                                <td><b><span id="sodiumPercentageF"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <th colspan="2" class="totalCarbHeader"><b>Total Carbohydrate </b><span id="totalCarbWeightF"></span></th>
+                                <td><b><span id="totalCarbPercentageF"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="dietaryFiberHeader">Dietary Fiber <span id="dietaryFiberWeightF"></span></th>
+                                <td><b><span id="dietaryFiberPercentageF"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="totalSugarHeader">Total Sugars <span id="totalSugarsWeightF"></span></th>
+                                <td><span id="totalSugarsPercentageF"></span></td>
+                            </tr>
+                            <tr class="border">
+                                <td class="blank-cell"></td>
+                                <th class="addedSugarsHeader">Includes - Added Sugars</th>
+                                <td></td>
+                            </tr>
+                            <tr class="border">
+                                <th colspan="2" class="proteinHeader"><b>Protein</b> <span id="proteinWeightF"></span></th>
+                                <td><b><span id="proteinPercentageF"></span></b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="nutritional-facts_tableF">
+                        <tbody>
+                            <tr class="borderF">
+                                <th class="vitaminDHeaderF">Vitamin D <span id="vitaminDWeightF"></span></th>
+                                <td><b><span id="vitaminDPercentageF"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <th class="calciumHeaderF">Calcium <span id="calciumWeightF"></span></th>
+                                <td><b><span id="calciumPercentageF"></span></b></td>
+                            </tr>
+                            <tr class="border">
+                                <th class="ironHeaderF">Iron <span id="ironWeightF"></span></th>
+                                <td><b><span id="ironPercentageF"></span></b></td>
+                            </tr>
+                            <tr class="borderF">
+                                <th class="PotassiumHeaderF">Potassium <span id="potassiumWeightF"></span></th>
+                                <td><b><span id="potassiumPercentageF"></span></b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="small-info" id="small-nutrition-info">*Percent Daily Values are based on a 2000 calorie diet</p>
+                </section>
+            </div>
+        </div>
+    </div>
     <section>
         <div class="directions-link">
             <a href id="link"><button>Get the Full Recipe</button></a>
         </div>
-        <div class="nutrition-facts">
-            <p>Click <strong>HERE</strong> for recipe Nutrition Facts.</p>
+        <div class="full-nutrition-facts">
+            <p id="full-nutrition">Click <strong>HERE</strong> for recipe Nutrition Facts.</p>
         </div>
         
         <div class="nutrition-facts">
             <p>(Click any ingredient to get nutrition facts for individual ingredients.)</p>
         </div>
+        
     </section>
     <footer>
         <h2>❤️ Made with love by Chad, Cheri & Sandeep</h2>
