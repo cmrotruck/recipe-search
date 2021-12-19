@@ -106,12 +106,14 @@
     text-align: left;
   }
 
-  .nutritional-facts{
-    font-size: 20px;
-  }
-
   .nutrition-facts{
     width: 100%;
+  }
+
+  .full-nutrition-facts{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   .nutritional-facts_title{
@@ -124,6 +126,13 @@
     text-align: right;
     width: 100%;
     border-collapse: collapse;
+  }
+
+  .nutritional-facts_tableF {
+    text-align: right;
+    width: 100%;
+    border-collapse: collapse;
+    display: none;
   }
 
   .border{

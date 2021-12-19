@@ -32,6 +32,30 @@ var getRecipe = function () {
                             var ingredient = ingredients[i]
                             var li = $("<li>").text(ingredient);
                             $("#ingredient").append(li)
+}});
+                console.log("Connection successful!");
+            }
+            else {
+                console.log("conneciton unsuccessful");
+            }
+        })
+        .catch(function (error) {
+            console.log("could not connect");
+        })
+}
+
+var getFullNutritionFacts = function () {
+    var queryString = document.location.search;
+    var recipeId = queryString.split("=")[1];
+    var apiURL = "https://api.edamam.com/api/recipes/v2/" + recipeId + "?type=public&app_id=579b2f0b&app_key=96bbae1d37867a6a42e036acb98ac063";
+
+
+    //nutritional api connection
+    fetch(apiURL)
+        .then(function (response) {
+            if (response.ok) {
+                response.json()
+                    .then(function (data) {
 
                             //initialize modal
                             $('.ui.modalF')
@@ -84,7 +108,7 @@ var getRecipe = function () {
                             $('.ui.modalF')
                              .modal('show')
                             ;
-}});
+});
                 console.log("Connection successful!");
             }
             else {
@@ -188,6 +212,14 @@ $(".ingredients").on("click", function (event) {
     // console.log(event.target.id);
     // console.log(event.target.textContent);
     getNutritionalFacts(event.target.textContent);
+    ;
+});
+
+$(".full-nutrition-facts").on("click", function (event) {
+    event.preventDefault();
+    // console.log(event.target.id);
+    // console.log(event.target.textContent);
+    getFullNutritionFacts(event.target.textContent);
     ;
 });
 
