@@ -24,3 +24,14 @@ https://cmrotruck.github.io/recipe-search/
 Made with ❤️ by Chad Rotruck, Sandeep Vittala, Cheri Merryman
 
 ### ©️2021
+
+#### Screenshots
+
+![Home Page](/assets/images/Home-Page-Screenshot.jpg)
+
+![Recipe Page](/assets/images/Recipe-Page-Screenshot.jpg)
+
+![Recipe Page](/assets/images/Modal-Screenshot.jpg)
+
+
+
